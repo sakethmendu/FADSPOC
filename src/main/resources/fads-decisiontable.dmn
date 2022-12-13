@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0z9pgew" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="c153ccb" camunda:diagramRelationId="6ebc4093-57be-415d-b47c-4c31f0866e4e" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <decision id="Decision_FADS" name="FADS_Decisiontable">
+    <decisionTable id="DecisionTable_0myfxl0">
+      <input id="InputClause_1345mdc" label="Case Type">
+        <inputExpression id="LiteralExpression_0kuiy0k" typeRef="string">
+          <text>caseType</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0f0p6d1">
+          <text>"Member Intake","Provider Intake"</text>
+        </inputValues>
+      </input>
+      <input id="Input_1" label="investigation Type" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>investigationType</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1v6aow1">
+          <text>"Preliminary","Full"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1hi77c8" label="Case Status">
+        <inputExpression id="LiteralExpression_15p4ccj" typeRef="string">
+          <text>caseStatus</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0g5ut09">
+          <text>"Initial Review","Open"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Hours" name="hours" typeRef="number" />
+      <output id="OutputClause_03sg82x" label="Message Code" name="messageCode" typeRef="string" biodi:width="192" />
+      <output id="OutputClause_06yifn4" label="Next Step" name="nextStep" typeRef="string" />
+      <rule id="DecisionRule_0jz2zk9">
+        <inputEntry id="UnaryTests_0wddp9y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1224bh7">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09o4o0q">
+          <text>"INITIAL REVIEW"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0papgxg">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vtjch0">
+          <text>"PRE_INT_REV"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zdqoyv">
+          <text>"OPEN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13wi941">
+        <inputEntry id="UnaryTests_13xde73">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jjpy6t">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhffwa">
+          <text>"OPEN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1itjzf5">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11i7dzp">
+          <text>"PRE_INT_OPN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jfwwtk">
+          <text>"PENDING"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ygd4lm">
+        <inputEntry id="UnaryTests_0rsn4qp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y5xn1i">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ty8ss9">
+          <text>"PENDING"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1710dh8">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yybtvu">
+          <text>"PRE_INT_PDNG"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ths3i">
+          <text>"CLOSED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qc9lgj">
+        <inputEntry id="UnaryTests_12mu7gz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pea0z2">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jkoj3o">
+          <text>"CLOSED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m3wb9o">
+          <text>6</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dww8ma">
+          <text>"PRE_INT_CLS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10546n4">
+          <text>"COMPLETE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n2yrde">
+        <inputEntry id="UnaryTests_13dccyl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pxqf23">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wp17zt">
+          <text>"COMPLETE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n1juyx">
+          <text>6</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_196tou5">
+          <text>"PRE_INT_COMP"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hk8txz">
+          <text>"FULL"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nyrq6g">
+        <inputEntry id="UnaryTests_04zd3lc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hl41s5">
+          <text>"PRELIMINARY"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zg3zuy">
+          <text>"ABORT"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ijvcho">
+          <text>6</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wpjjki">
+          <text>"PRE_INT_ABRT"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rlbqjj">
+          <text>"END"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1g33ldc">
+        <inputEntry id="UnaryTests_0iylepe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03flaus">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fr22uc">
+          <text>"OPEN"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0poej0c">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qwk8b6">
+          <text>"FULL_OPN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jncq7r">
+          <text>"SAMPLE SELECTION"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_193aogo">
+        <inputEntry id="UnaryTests_13er21x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aubwgp">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xtddu7">
+          <text>"SAMPLE SELECTION"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c2r5f2">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e56tsd">
+          <text>"FULL_SMP_SELECT"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u3n5kb">
+          <text>"MEDICAL RECORDS REQUESTED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05r1m20">
+        <inputEntry id="UnaryTests_0c8m1gd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b4f647">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ztqnvl">
+          <text>"MEDICAL RECORDS REQUESTED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ptpsru">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xe2viy">
+          <text>"FULL_MD_REC_RQ"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cdi0xa">
+          <text>"MEDICAL RECORDS RECEIVED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g9unp9">
+        <inputEntry id="UnaryTests_03wcwo0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yxix15">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lqozs2">
+          <text>"MEDICAL RECORDS RECEIVED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qrtvoq">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18hj2gh">
+          <text>"FULL_MD_REC_RCV"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sq2vc3">
+          <text>"MEDICAL RECORDS REVIEWED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06aiyha">
+        <inputEntry id="UnaryTests_0v5upx5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11xwu89">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18amadh">
+          <text>"MEDICAL RECORDS REVIEWED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lkk6xo">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kqs157">
+          <text>"FULL_MD_REC_RVW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_163m0wf">
+          <text>"PRELIMINARY
+FINDINGS REVIEW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12p5nw8">
+        <inputEntry id="UnaryTests_0541xgr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1upo9xy">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09me9lk">
+          <text>"PRELIMINARY
+FINDINGS REVIEW"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ovq9gb">
+          <text>6</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03dgz8r">
+          <text>"FULL_PRE_FN_RVW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jrbtjx">
+          <text>"PRELIMINARY LETTER SENT"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06pf9nw">
+        <inputEntry id="UnaryTests_09m9k9n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06j22oa">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yl255l">
+          <text>"PRELIMINARY LETTER SENT"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hlqz45">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tng97f">
+          <text>"FULL_PRE_LTR_SNT"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ruprel">
+          <text>"PROVIDER RESPONSE RECEIVED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03yskcs">
+        <inputEntry id="UnaryTests_1hhehq9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zz0z5c">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vcjdir">
+          <text>"PROVIDER RESPONSE RECEIVED" </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jqflts">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1okj8kn">
+          <text>"FULL_PRO_RSP_RCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qyopoq">
+          <text>"PROVIDER RESPONSE REVIEW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qtgi7j">
+        <inputEntry id="UnaryTests_0st6sso">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10kik5w">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jwimwo">
+          <text>"PROVIDER RESPONSE REVIEW"
+</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10pwih3">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dtnooc">
+          <text>"FULL_PRO_RSP_RVW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jgold9">
+          <text>"FINAL
+FINDINGS REVIEW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cl36hl">
+        <inputEntry id="UnaryTests_10m2m7s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kio0yk">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hfs0mg">
+          <text>"FINAL
+FINDINGS REVIEW"
+</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ks8r3m">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lua73j">
+          <text>"FULL_FNF_RVW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bemu4p">
+          <text>"CLOSED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y2s14o">
+        <inputEntry id="UnaryTests_1hg7ysh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1keyt0y">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jaxeq9">
+          <text>
+"CLOSED"
+
+
+</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l3eeaj">
+          <text>24</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07isnmm">
+          <text>"FULL_CLSD"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_017zmse">
+          <text>"END"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16fsghd">
+        <inputEntry id="UnaryTests_08fv6tz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pny6aq">
+          <text>"FULL"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ck6iow">
+          <text>"ABORT"
+
+
+</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0h2d4mx">
+          <text>6</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pj6zaa">
+          <text>"FULL_ABRT"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cv8ktn">
+          <text>"END"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_FADS">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
