@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0z9pgew" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="c153ccb" camunda:diagramRelationId="6ebc4093-57be-415d-b47c-4c31f0866e4e" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
   <decision id="Decision_FADS" name="FADS_Decisiontable">
-    <decisionTable id="DecisionTable_0myfxl0">
+    <decisionTable id="DecisionTable_0myfxl0" hitPolicy="FIRST">
       <input id="InputClause_1345mdc" label="Case Type">
         <inputExpression id="LiteralExpression_0kuiy0k" typeRef="string">
           <text>caseType</text>
@@ -28,7 +28,11 @@
       </input>
       <output id="Output_1" label="Hours" name="hours" typeRef="number" />
       <output id="OutputClause_03sg82x" label="Message Code" name="messageCode" typeRef="string" biodi:width="192" />
-      <output id="OutputClause_06yifn4" label="Next Step" name="nextStep" typeRef="string" />
+      <output id="OutputClause_06yifn4" label="Next Step" name="nextStep" typeRef="string" biodi:width="192">
+        <outputValues id="UnaryTests_1nstbdq">
+          <text>"PRELIMINARY","FULL","CLOSED"</text>
+        </outputValues>
+      </output>
       <rule id="DecisionRule_0jz2zk9">
         <inputEntry id="UnaryTests_0wddp9y">
           <text></text>
@@ -46,7 +50,7 @@
           <text>"PRE_INT_REV"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zdqoyv">
-          <text>"OPEN"</text>
+          <text>"PRELIMINARY"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_13wi941">
@@ -66,7 +70,7 @@
           <text>"PRE_INT_OPN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jfwwtk">
-          <text>"PENDING"</text>
+          <text>"PRELIMINARY"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ygd4lm">
@@ -86,7 +90,7 @@
           <text>"PRE_INT_PDNG"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04ths3i">
-          <text>"CLOSED"</text>
+          <text>"PRELIMINARY"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qc9lgj">
@@ -106,7 +110,7 @@
           <text>"PRE_INT_CLS"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10546n4">
-          <text>"COMPLETE"</text>
+          <text>"CLOSED"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0n2yrde">
@@ -129,26 +133,6 @@
           <text>"FULL"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0nyrq6g">
-        <inputEntry id="UnaryTests_04zd3lc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hl41s5">
-          <text>"PRELIMINARY"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zg3zuy">
-          <text>"ABORT"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ijvcho">
-          <text>6</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wpjjki">
-          <text>"PRE_INT_ABRT"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1rlbqjj">
-          <text>"END"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1g33ldc">
         <inputEntry id="UnaryTests_0iylepe">
           <text></text>
@@ -166,7 +150,7 @@
           <text>"FULL_OPN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jncq7r">
-          <text>"SAMPLE SELECTION"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_193aogo">
@@ -186,7 +170,7 @@
           <text>"FULL_SMP_SELECT"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u3n5kb">
-          <text>"MEDICAL RECORDS REQUESTED"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_05r1m20">
@@ -206,7 +190,7 @@
           <text>"FULL_MD_REC_RQ"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cdi0xa">
-          <text>"MEDICAL RECORDS RECEIVED"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0g9unp9">
@@ -226,7 +210,7 @@
           <text>"FULL_MD_REC_RCV"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sq2vc3">
-          <text>"MEDICAL RECORDS REVIEWED"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06aiyha">
@@ -246,8 +230,7 @@
           <text>"FULL_MD_REC_RVW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_163m0wf">
-          <text>"PRELIMINARY
-FINDINGS REVIEW"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_12p5nw8">
@@ -268,7 +251,7 @@ FINDINGS REVIEW"</text>
           <text>"FULL_PRE_FN_RVW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jrbtjx">
-          <text>"PRELIMINARY LETTER SENT"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06pf9nw">
@@ -288,7 +271,7 @@ FINDINGS REVIEW"</text>
           <text>"FULL_PRE_LTR_SNT"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ruprel">
-          <text>"PROVIDER RESPONSE RECEIVED"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03yskcs">
@@ -308,7 +291,7 @@ FINDINGS REVIEW"</text>
           <text>"FULL_PRO_RSP_RCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qyopoq">
-          <text>"PROVIDER RESPONSE REVIEW"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0qtgi7j">
@@ -329,8 +312,7 @@ FINDINGS REVIEW"</text>
           <text>"FULL_PRO_RSP_RVW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jgold9">
-          <text>"FINAL
-FINDINGS REVIEW"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0cl36hl">
@@ -352,7 +334,7 @@ FINDINGS REVIEW"
           <text>"FULL_FNF_RVW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bemu4p">
-          <text>"CLOSED"</text>
+          <text>"FULL"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0y2s14o">
@@ -376,7 +358,7 @@ FINDINGS REVIEW"
           <text>"FULL_CLSD"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_017zmse">
-          <text>"END"</text>
+          <text>"CLOSED"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16fsghd">
@@ -384,7 +366,7 @@ FINDINGS REVIEW"
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pny6aq">
-          <text>"FULL"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ck6iow">
           <text>"ABORT"
@@ -399,7 +381,7 @@ FINDINGS REVIEW"
           <text>"FULL_ABRT"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cv8ktn">
-          <text>"END"</text>
+          <text>"CLOSED"</text>
         </outputEntry>
       </rule>
     </decisionTable>

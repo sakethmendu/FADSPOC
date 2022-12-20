@@ -8,12 +8,16 @@ public class Case {
     private String caseType;
     private String caseStatus;
     private String investigationType;
+    private String caseCreator;
+    private String caseCreatorMail;
 
-    public Case(String caseId, String caseType, String caseStatus, String investigationType) {
-        this.caseId = caseId;
-        this.caseType = caseType;
-        this.caseStatus = caseStatus;
-        this.investigationType = investigationType;
+    public Case(String caseId, String caseType, String caseStatus, String investigationType, String caseCreator, String caseCreatorMail) {
+        this.caseId = caseId.toUpperCase();
+        this.caseType = caseType.toUpperCase();
+        this.caseStatus = caseStatus.toUpperCase();
+        this.investigationType = investigationType.toUpperCase();
+        this.caseCreator = caseCreator.toUpperCase();
+        this.caseCreatorMail = caseCreatorMail;
     }
 
     public String getCaseId() {
@@ -46,5 +50,21 @@ public class Case {
 
     public void setInvestigationType(String investigationType) {
         this.investigationType = investigationType;
+    }
+
+    public String getCaseCreator() {
+        return caseCreator;
+    }
+
+    public void setCaseCreator(String caseCreator) {
+        this.caseCreator = caseCreator;
+    }
+
+    public String getCaseCreatorMail() {
+        return caseCreatorMail;
+    }
+
+    public void setCaseCreatorMail(String caseCreatorMail) {
+        this.caseCreatorMail = caseCreatorMail;
     }
 }
