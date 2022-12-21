@@ -68,7 +68,7 @@ public class MessageRestController {
         htmlTemplate = htmlTemplate.replace("#{case_status}","Case Status: "+(String) job.getVariablesAsMap().get("caseStatus"));
         opMap.put("htmlTemplate", htmlTemplate);
         if (((String) requestEntity.getBody().get("recipient")).equalsIgnoreCase("Case_Creator")) {
-            mailList.add("garvitsharma15@gmail.com");
+            mailList.add((String) job.getVariablesAsMap().get("caseCreatorMail"));
         } else {
             mailList.add("mendusakethreddy@gmail.com");
         }

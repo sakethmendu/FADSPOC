@@ -26,7 +26,7 @@
           <text>"Initial Review","Open"</text>
         </inputValues>
       </input>
-      <output id="Output_1" label="Hours" name="hours" typeRef="number" />
+      <output id="Output_1" label="Hours" name="hours" typeRef="string" />
       <output id="OutputClause_03sg82x" label="Message Code" name="messageCode" typeRef="string" biodi:width="192" />
       <output id="OutputClause_06yifn4" label="Next Step" name="nextStep" typeRef="string" biodi:width="192">
         <outputValues id="UnaryTests_1nstbdq">
@@ -44,7 +44,7 @@
           <text>"INITIAL REVIEW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0papgxg">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vtjch0">
           <text>"PRE_INT_REV"</text>
@@ -64,7 +64,7 @@
           <text>"OPEN"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1itjzf5">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11i7dzp">
           <text>"PRE_INT_OPN"</text>
@@ -84,7 +84,7 @@
           <text>"PENDING"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1710dh8">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yybtvu">
           <text>"PRE_INT_PDNG"</text>
@@ -104,7 +104,7 @@
           <text>"CLOSED"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0m3wb9o">
-          <text>6</text>
+          <text>"6"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dww8ma">
           <text>"PRE_INT_CLS"</text>
@@ -124,7 +124,7 @@
           <text>"COMPLETE"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1n1juyx">
-          <text>6</text>
+          <text>"6"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_196tou5">
           <text>"PRE_INT_COMP"</text>
@@ -144,7 +144,7 @@
           <text>"OPEN"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0poej0c">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qwk8b6">
           <text>"FULL_OPN"</text>
@@ -164,7 +164,7 @@
           <text>"SAMPLE SELECTION"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1c2r5f2">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0e56tsd">
           <text>"FULL_SMP_SELECT"</text>
@@ -184,7 +184,7 @@
           <text>"MEDICAL RECORDS REQUESTED"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ptpsru">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xe2viy">
           <text>"FULL_MD_REC_RQ"</text>
@@ -204,7 +204,7 @@
           <text>"MEDICAL RECORDS RECEIVED"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0qrtvoq">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18hj2gh">
           <text>"FULL_MD_REC_RCV"</text>
@@ -224,7 +224,7 @@
           <text>"MEDICAL RECORDS REVIEWED"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0lkk6xo">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1kqs157">
           <text>"FULL_MD_REC_RVW"</text>
@@ -245,7 +245,7 @@
 FINDINGS REVIEW"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ovq9gb">
-          <text>6</text>
+          <text>"6"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03dgz8r">
           <text>"FULL_PRE_FN_RVW"</text>
@@ -265,7 +265,7 @@ FINDINGS REVIEW"</text>
           <text>"PRELIMINARY LETTER SENT"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hlqz45">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tng97f">
           <text>"FULL_PRE_LTR_SNT"</text>
@@ -285,7 +285,7 @@ FINDINGS REVIEW"</text>
           <text>"PROVIDER RESPONSE RECEIVED" </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0jqflts">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1okj8kn">
           <text>"FULL_PRO_RSP_RCW"</text>
@@ -306,7 +306,7 @@ FINDINGS REVIEW"</text>
 </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10pwih3">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dtnooc">
           <text>"FULL_PRO_RSP_RVW"</text>
@@ -328,7 +328,7 @@ FINDINGS REVIEW"
 </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ks8r3m">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lua73j">
           <text>"FULL_FNF_RVW"</text>
@@ -352,7 +352,7 @@ FINDINGS REVIEW"
 </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0l3eeaj">
-          <text>24</text>
+          <text>"24"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07isnmm">
           <text>"FULL_CLSD"</text>
@@ -375,7 +375,7 @@ FINDINGS REVIEW"
 </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0h2d4mx">
-          <text>6</text>
+          <text>"6"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pj6zaa">
           <text>"FULL_ABRT"</text>
