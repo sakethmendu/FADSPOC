@@ -13,9 +13,8 @@ import io.camunda.zeebe.spring.client.EnableZeebeClient;
 
 @SpringBootApplication
 @EnableZeebeClient
-@Deployment(resources = {"classpath:fads-bpmn.bpmn", "classpath:fads2-bpmn.bpmn", "classpath:fads-decisiontable.dmn"})
+@Deployment(resources = {"classpath:fads.bpmn", "classpath:fads2.bpmn", "classpath:fads-decisiontable.dmn"})
 public class CamundaEventsApplication {
-
 
     public static void main(String[] args) {
         SpringApplication.run(CamundaEventsApplication.class, args);
